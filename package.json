@@ -1,0 +1,23 @@
+{
+  "name": "pollbot",
+  "version": "1.0.0",
+  "description": "Little slack Bot to create polls",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JulesDT/pollBot.git"
+  },
+  "author": "Pod",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JulesDT/pollBot/issues"
+  },
+  "homepage": "https://github.com/JulesDT/pollBot#readme",
+  "dependencies": {
+    "slackbots": "^0.5.3",
+    "sqlite3": "^3.1.7"
+  }
+}
