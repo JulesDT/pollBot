@@ -1,5 +1,6 @@
 const Bot = require('slackbots');
 const fs = require('fs');
+const validator = require('validator');
 
 var lastRequest = 0
 
@@ -67,7 +68,11 @@ bot.on('message', function(event){
             else{
                 var content = ""
                 for(var i = 0; i < args.length; i++){
-                    content += ":"+translate((i+1)%10)+": "+args[i]+"\n";
+                    if(!validator.isAscii(args[i])){
+                        bot.postMessage(event.channel, "What the fuck are you telling me ?");
+                        return;
+                    }
+                    content += ":"+translate((i+1)%10)+": "+args[i].trim()+"\n";
                 }
                 console.log(content);
                 bot.postMessage(event.channel, content);
