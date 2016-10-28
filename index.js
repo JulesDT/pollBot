@@ -1,4 +1,5 @@
 const Bot = require('slackbots');
+const fs = require('fs');
 
 var lastRequest = 0
 
@@ -40,10 +41,8 @@ function translate(number){
 }
 
 // create a bot
-const settings = {
-    token: 'xoxb-54545282480-j4kawivns6VzRw0CmmXJYtzX',
-    name: 'PodBot'
-};
+const settings = JSON.parse(fs.readFileSync('settings.json'));
+
 const bot = new Bot(settings);
 
 bot.on('start', function() {
@@ -51,7 +50,6 @@ bot.on('start', function() {
 });
 
 bot.on('message', function(event){
-    console.log(event);
     if(event.type === 'message'){
         if(event.text.startsWith('!poll')){
             if(Date.now() - lastRequest < 20*1000){
