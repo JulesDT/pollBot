@@ -68,10 +68,10 @@ bot.on('message', function(event){
             else{
                 var content = ""
                 for(var i = 0; i < args.length; i++){
-                    if(!validator.isAscii(args[i])){
+                    /*if(!validator.isAscii(args[i])){
                         bot.postMessage(event.channel, "What the fuck are you telling me ?");
                         return;
-                    }
+                    }*/
                     content += ":"+translate((i+1)%10)+": "+args[i].trim()+"\n";
                 }
                 console.log(content);
