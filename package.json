@@ -18,6 +18,7 @@
   "homepage": "https://github.com/JulesDT/pollBot#readme",
   "dependencies": {
     "slackbots": "^0.5.3",
-    "sqlite3": "^3.1.7"
+    "sqlite3": "^3.1.7",
+    "validator": "^6.1.0"
   }
 }
