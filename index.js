@@ -73,5 +73,8 @@ bot.on('message', function(event){
                 bot.postMessage(event.channel, content);
             }
         }
+        else if (event.text.startsWith('!help')) {
+            bot.postMessage(event.channel, "Usage : !poll <option1>|<option2>[|<option3> ...]. Max : 10 options");
+        }
     }
 });
