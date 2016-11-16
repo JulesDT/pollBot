@@ -9,7 +9,7 @@ function translate(number){
 }
 
 // create a bot
-const settings = JSON.parse(fs.readFileSync('settings.json'));
+const settings = JSON.parse(fs.readFileSync('settings.json'))[process.argv[2]];
 
 const bot = new Bot(settings);
 
